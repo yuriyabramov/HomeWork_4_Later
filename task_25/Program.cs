@@ -13,12 +13,18 @@ Console.WriteLine($"{A}, {B} -> {Math.Pow (A, B)} ");*/
 
 int A = GetNumberFromUserA ("Введите целое число A: ", "Ошибка ввода!");
 int B = GetNumberFromUserB ("Введите целое число B: ", "Ошибка ввода!"); 
+ToDegree(A, B);
 
-int C = Convert.ToInt32 (Math.Pow (A, B));
+// int C = Convert.ToInt32 (Math.Pow (A, B));      ----> 18 и 19 строками можно заменить 16
+// PrintReport(A, B, C);                           ----> 18 и 19 строками можно заменить 16
 
-PrintReport(A, B, C);
 
-#region 
+
+
+
+#region Methods
+
+// input
 
 int GetNumberFromUserA(string message, string errorMessage)
 {
@@ -49,10 +55,23 @@ int GetNumberFromUserB(string message, string errorMessage)
     
 }
 
+// logic
 
-void PrintReport(int A, int B, int C)
+void ToDegree(int a, int b)
+{
+    int result = 1;
+    for (int i = 1; i <= b; i++)
+    {
+        result = result * a;
+    }
+    Console.WriteLine(a + " в степени " + b + " = " + result);
+}
+
+// output
+
+/*void PrintReport(int A, int B, int C)
 {
     Console.WriteLine($"{A}, {B} -> {C}");
-}
+} */
 
 #endregion
